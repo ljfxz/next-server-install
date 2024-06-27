@@ -42,12 +42,11 @@ else
 exit 1
 fi
 mkdir -p /etc/next-server
-wget -q -N --no-check-certificate -P /etc/next-server "https://github.com/SSPanel-NeXT/NeXT-Server/releases/download/${last_version}/next-server-linux-${arch}.zip"
+wget -N --no-check-certificate -P /etc/next-server "https://github.com/SSPanel-NeXT/NeXT-Server/releases/download/${last_version}/next-server-linux-${arch}.zip"
 unzip /etc/next-server/next-server-linux-${arch}.zip
-cd /etc/next-server
-chmod +x next-server
-mv next-server /usr/bin/
-wget -q -N --no-check-certificate -P /etc/systemd/system/ "https://raw.githubusercontent.com/ljfxz/next-server-install/main/next-server.service"
+mv /etc/next-server/next-server /usr/bin
+chmod +x /usr/bin/next-server
+wget -N --no-check-certificate -P /etc/systemd/system/ "https://raw.githubusercontent.com/ljfxz/next-server-install/main/next-server.service"
 systemctl daemon-reload
 systemctl enable next-server
 menu

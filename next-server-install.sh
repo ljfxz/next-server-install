@@ -81,11 +81,11 @@ show_log() {
 
 menu(){
 echo -e " 
- ${GREEN} 1.安装next-server
- ${GREEN} 2.编辑next-server
- ${GREEN} 3.管理next-server
- ${GREEN} 4.next-server日志
- ${GREEN} 0.退出脚本"
+  1.安装next-server
+  2.编辑next-server
+  3.管理next-server
+  4.next-server日志
+  0.退出脚本"
  read -p " 请输入数字后[0-7] 按回车键:" num
 case "$num" in
 	1)

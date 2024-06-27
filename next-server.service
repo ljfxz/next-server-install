@@ -1,5 +1,5 @@
 [Unit]
-Description=goitzq server
+Description=next-server
 
 [Service]
 Type=simple

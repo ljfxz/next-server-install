@@ -9,14 +9,11 @@ echo -e "${BLUE}
 last_version=$(curl -Ls "https://api.github.com/repos/SSPanel-NeXT/NeXT-Server/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 arch=$(arch)
 if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
-    arch="64"
+    arch="amd64"
 elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
-    arch="arm64-v8a"
-elif [[ $arch == "s390x" ]]; then
-    arch="s390x"
+    arch="arm64"
 else
-    arch="64"
-    echo -e "检测架构失败，使用默认架构: ${arch}"
+  arch="riscv64"
 fi
 
 install_next-server(){

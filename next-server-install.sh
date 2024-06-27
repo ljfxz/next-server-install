@@ -72,6 +72,7 @@ menu
 
 next-server_config(){
 vim /etc/next-server/config.yml
+systemctl restart next-server
 }
 
 show_log() {

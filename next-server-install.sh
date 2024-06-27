@@ -80,12 +80,23 @@ show_log() {
     journalctl -u next-server.service -e --no-pager -f
 }
 
+uninstall_next-server(){
+systemctl stop next-server
+systemctl disable next-server
+rm -rf /etc/systemd/system/next-server.service
+systemctl daemon-reload
+systemctl reset-failed
+rm -rf /etc/next-server
+rm -rf /usr/bin/next-server
+}
+
 menu(){
 echo -e " 
   1.安装next-server
   2.编辑next-server
   3.管理next-server
   4.next-server日志
+  5.卸载next-server
   0.退出脚本"
  read -p " 请输入数字后[0-4] 按回车键:" num
 case "$num" in
@@ -101,11 +112,14 @@ case "$num" in
 	4)
 	show_log
 	;;
+ 	5)
+	uninstall_next-server
+	;;
 	0)
 	exit 1
 	;;
 	*)	
-	echo "请输入正确数字 [0-4] 按回车键"
+	echo "请输入正确数字 [0-5] 按回车键"
 	sleep 1s
 	menu
 	;;

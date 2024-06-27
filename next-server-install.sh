@@ -104,7 +104,7 @@ case "$num" in
 	exit 1
 	;;
 	*)	
-	echo "请输入正确数字 [0-7] 按回车键"
+	echo "请输入正确数字 [0-4] 按回车键"
 	sleep 1s
 	menu
 	;;

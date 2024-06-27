@@ -71,6 +71,7 @@ menu
 
 next-server_config(){
 vim /etc/next-server/config.yml
+sleep 2
 systemctl restart next-server
 }
 

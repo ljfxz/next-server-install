@@ -6,7 +6,9 @@ echo -e "${BLUE}
 -----------------------------write by tg:@ljfxz-----------------------------
 "
 [[ $EUID -ne 0 ]] && echo -e "错误 必须使用root用户运行此脚本！\n" && exit 1
+
 last_version=$(curl -Ls "https://api.github.com/repos/SSPanel-NeXT/NeXT-Server/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+
 arch=$(arch)
 if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
     arch="amd64"

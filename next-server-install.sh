@@ -59,7 +59,6 @@ echo -e "
  ${GREEN} 2.启动next-server
  ${GREEN} 3.重启next-server
 "
-}
 read -p "请输入选项:" Num
 if [ "$Num" = "1" ];then
 systemctl stop next-server

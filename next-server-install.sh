@@ -85,7 +85,7 @@ echo -e "
   3.管理next-server
   4.next-server日志
   0.退出脚本"
- read -p " 请输入数字后[0-7] 按回车键:" num
+ read -p " 请输入数字后[0-4] 按回车键:" num
 case "$num" in
 	1)
 	install_next-server
